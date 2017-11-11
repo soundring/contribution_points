@@ -1,0 +1,16 @@
+<ons-page ng-controller="ExchangeController as ctrl" ons-init="ctrl.init($event)">
+    <ons-toolbar>
+        <div class="center">ポイント交換</div>
+    </ons-toolbar>
+    
+    <div class="pay_receive_button">
+        <div class="pay_button">
+            <ons-button class="pay" ng-click="ctrl.gotoPay()">支払う</ons-button>
+        </div>
+        
+        <div class="receive_button">
+            <ons-button class="receive" ng-click="ctrl.gotoReceive()">受け取る</ons-button>
+        </div>
+   </div>
+   
+</ons-page>

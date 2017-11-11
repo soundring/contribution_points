@@ -1,0 +1,46 @@
+<ons-page ng-controller="ReceiveController as ctrl" ons-init="ctrl.init($event)">
+    <ons-toolbar>
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">受け取りポイント指定</div>
+</ons-toolbar>
+    
+   
+    <div class="number">
+    <form class="receive_select_button">
+        <table border="2">
+            <tr>
+            <td><div class="number_select" ng-click="num = !num ? 9 : num + '9'">9</div></td>
+            <td><div class="number_select" ng-click="num = !num ? 8 : num + '8'">8</div></td>
+            <td><div class="number_select" ng-click="num = !num ? 7 : num + '7'">7</div></td>
+            </tr>
+            <tr>
+            <td><div class="number_select" ng-click="num = !num ? 6 : num + '6'">6</div></td>
+            <td><div class="number_select" ng-click="num = !num ? 5 : num + '5'">5</div></td>
+            <td><div class="number_select" ng-click="num = !num ? 4 : num + '4'">4</div></td>
+            </tr>
+            <tr>
+            <td><div class="number_select" ng-click="num = !num ? 3 : num + '3'">3</div></td>
+            <td><div class="number_select" ng-click="num = !num ? 2 : num + '2'">2</div></td>
+            <td><div class="number_select" ng-click="num = !num ? 1 : num + '1'">1</div></td>
+            </tr>
+            <tr>
+            <td><div class="number_select" ng-click="num = !num ? 0 : num + '0'">0</div></td>
+            <td><div class="number_select" ng-click="num = !num ? 0 : num + '00'">00</div></td>
+            <td><div class="number_select" ng-click="num = 0">C</div></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+                
+        <input style="width: 70%; background-color: rgb(47,66,80); font-size:40px; color: white; text-align: right; float: left; margin-top: 20px; margin-left: 22px;" ng-model="num">
+  
+    
+    
+
+    <div class="receive_cp">CP</div>        
+
+    
+    <div class="kextutei">
+        <ons-button class="point_submit"  ng-click="ctrl.gotoQrcode(num)">決定</ons-button>
+    </div>
+</ons-page>

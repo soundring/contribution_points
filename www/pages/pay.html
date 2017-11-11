@@ -1,0 +1,11 @@
+<ons-page ng-controller="PayController as ctrl" ons-init="ctrl.init($event)">
+    <ons-toolbar>
+    <div class="left"><ons-back-button>戻る</ons-back-button></div>
+    <div class="center">ポイント支払い</div>
+</ons-toolbar>
+    
+   
+     <p>
+        <ons-button modifier="large" ng-click="ctrl.scan()">カメラ起動</ons-button>
+     </p>
+</ons-page>

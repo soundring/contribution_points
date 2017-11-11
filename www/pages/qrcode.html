@@ -1,0 +1,13 @@
+<ons-page ng-controller="QrcodeController as ctrl" ons-init="ctrl.init($event)">
+    <ons-toolbar>
+        <div class="left"><ons-back-button>戻る</ons-back-button></div>
+        <div class="center">受け取り用QRコード表示</div> 
+    </ons-toolbar>
+    
+    <div class="QRintro">{{ctrl.num}}</div> 
+
+        <img class="QRcode" src="http://api.qrserver.com/v1/create-qr-code/?data={{ctrl.num}}cp" alt="QRコード"/>
+
+
+    <p class="QRintro">このコードを読み取り側の端末で読み取って下さい</p>
+</ons-page>

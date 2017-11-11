@@ -1,0 +1,22 @@
+<ons-page ng-controller="SettingController as ctrl" ons-init="ctrl.init($event)">
+    <ons-toolbar>
+        <div class="left"><ons-back-button>戻る</ons-back-button></div>
+        <div class="center">設定</div>
+    </ons-toolbar>
+    
+    <div class="setting">
+       <p class="set_profile">プロフィール画像</p>
+        <input type="file" name="example" style="width: 250px; position: absolute; left: 15%;">
+       <p class="set_bg">背景画像</p>
+        <input type="file" name="example" style="width: 250px; position: absolute; left: 15%;">
+       <p class="set_nickname">ニックネーム</p>
+        <input type="text" name="example" style="width: 200px; background-color: rgb(47,66,80); color: white; font-size:20px; text-align: right;">
+       <p class="set_intro">一言</p>
+        <input type="text" name="example" style="width: 200px; background-color: rgb(47,66,80); color: white; font-size:20px; text-align: right;">
+    </div>
+   
+    <div class="go_button">
+        <ons-button class="setting_submit_button" ng-click="ctrl.gotoHome()">設定する</ons-button>
+    </div>
+    
+</ons-page>
