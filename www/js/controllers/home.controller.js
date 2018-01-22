@@ -7,10 +7,10 @@
         .controller('HomeController', Controller);
 
     // DI
-    Controller.$inject = ['TodoService'];
+    Controller.$inject = ['$http'];
 
     // コントローラ
-    function Controller() {
+    function Controller($http) {
         // ビューモデル
         var vm = this;
         vm.init = init;
@@ -42,11 +42,11 @@
         }
         
         function gotoSetting() {
-        navi.pushPage('pages/setting.html');  // setting.htmlは別途用意
+        navi.pushPage('pages/setting.html');  
         }
         
         function gotoTop() {
-        navi.popPage();  
+        navi.replacePage('pages/top.html');  
         }
         
         
@@ -54,8 +54,18 @@
         /** 
          * 初期化
          */
+        
         function init($event) {
-           // load();
+          $http.get("https://limitless-atoll-79397.herokuapp.com/user/31").then(function( response ) {
+              vm.data = response.data;                
+          });
+        
+        $http.get('https://limitless-atoll-79397.herokuapp.com/user/point/31').then(function( response ) {
+              vm.points = response.data.Points;
+        });
+         
         }
+        　
+    　　
     }
 })();

@@ -1,0 +1,16 @@
+<ons-page  ng-controller="TopController as ctrl" ons-init="ctrl.init($event)">
+    <script>
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            console.log("window.open works well");
+        }
+        /*/
+        var ref = cordova.InAppBrowser.open('https://limitless-atoll-79397.herokuapp.com/request_token', '_blank', 'location=yes');
+        ref.addEventListener('loadstart', function(event) {
+            if(event.url == "認証が終わった後に強制的に飛ばすURL"){
+                ref.close(); #閉じる
+            }
+        });
+        //*/
+    </script>
+</ons-page>

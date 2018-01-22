@@ -3,9 +3,36 @@
     <div class="left"><ons-back-button>戻る</ons-back-button></div>
     <div class="center">ポイント支払い</div>
 </ons-toolbar>
-    
+    <!-- azunyan1111 code -->
+    <script>
+        // データを取得する
+      //  $("#send").click(function(){
+    //        console.log("click");
+    //      $.getJSON("https://limitless-atoll-79397.herokuapp.com/payment?rqid=31&rqcp=100&myid=41", function( data ) {
+    //        $("#send").html("完了");
+    //      });
+    //    });
+        
+       // 「ブラウザで開く」を押したときのイベント
+    //      $("#BrowserOpenButton").click(function() {
+            
+            //window.open('https://limitless-atoll-79397.herokuapp.com/payment?rqid=31&rqcp=100&myid=41');
+            //return false;
+    //      });
+    </script>
+    <!-- azunyan1111 Code -->
    
      <p>
-        <ons-button modifier="large" ng-click="ctrl.scan()">カメラ起動</ons-button>
+        <ons-button class="camera_button" ng-click="ctrl.scan()">カメラ起動</ons-button>
+       <!-- <ons-button id="send" modifier="large">送信</ons-button> -->
      </p>
+     
+     <p class="camera_word">
+         カメラで相手のQRコードを読み取ってください
+     </p>
+     
+     
+     <p id="ResultMessage">ここに結果が表示されます。</p>
+ 
+    <button id="BrowserOpenButton" type="button" style="display: none;">URLをブラウザで開く</button>
 </ons-page>

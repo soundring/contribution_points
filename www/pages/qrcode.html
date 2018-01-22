@@ -1,13 +1,14 @@
 <ons-page ng-controller="QrcodeController as ctrl" ons-init="ctrl.init($event)">
     <ons-toolbar>
         <div class="left"><ons-back-button>戻る</ons-back-button></div>
-        <div class="center">受け取り用QRコード表示</div> 
+        <div class="center">受け取り用QRコード</div> 
+        <div class="right" ><ons-toolbar-button  ng-click="navi.replacePage('pages/main.html')">ホーム</ons-toolbar-button></div>
     </ons-toolbar>
     
-    <div class="QRintro">{{ctrl.num}}</div> 
-
-        <img class="QRcode" src="http://api.qrserver.com/v1/create-qr-code/?data={{ctrl.num}}cp" alt="QRコード"/>
-
-
-    <p class="QRintro">このコードを読み取り側の端末で読み取って下さい</p>
+    <!-- azunyan1111 Code -->
+    <div class="QRintro">請求ポイント:<p id="point_js">{{ctrl.num}}</p></div>
+    
+    <img id="QrCode_js" class="QRcode" src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=https://limitless-atoll-79397.herokuapp.com/payment?rqid%3d31%26rqcp%3d{{ctrl.num}}%26myid%3d41" alt="QRコード"/>
+    <p class="QRintro">このコードを支払い側の端末で読み取ってください</p>
+    <!-- azunyan1111 Code -->
 </ons-page>

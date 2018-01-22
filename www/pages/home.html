@@ -1,4 +1,3 @@
-
 <ons-page  ng-controller="HomeController as ctrl" ons-init="ctrl.init($event)">
     <ons-toolbar>
     <div class="left"><ons-toolbar-button ng-click="ctrl.gotoTop()">ログアウト</ons-toolbar-button></div>
@@ -7,47 +6,47 @@
         <ons-toolbar-button ng-click="ctrl.gotoSetting()">設定</ons-toolbar-button>
     </div>
 </ons-toolbar>
+  
+    
+
+    
     <div class="bg">
       <div class="box">
-        <img class="profile_image" src="https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/19399645_950040921804557_7583262403966144549_n.jpg?oh=03d6a1e25f26493231a0341a3eff7e22&oe=5A9F3439" alt="プロフィール画像" width="120" height="120" border="0" />
-        <p class="name">なりさん</p>
-        <p class="introduction">二次元愛者</p>
+        <!-- 名前・紹介・アイコンはこちらで指定する　<img id="profile_image_js" class="profile_image" src="{{ctrl.data.UserImage}}" alt="プロフィール画像" width="120" height="120" border="0" />
+         　　　<p id="name_js" class="name">{{ctrl.data.UserName}}</p>
+              　<p id="introduction_js" class="introduction">{{ctrl.data.MoodMessage}}</p>
+       -->
+       
+       <img id="profile_image_js" class="profile_image" src="images/gotiusa.png" alt="プロフィール画像" width="100" height="100" border="0" />
+       <p id="name_js" class="name">二次元愛者</p>
+       <p id="introduction_js" class="introduction">二次元を愛する者</p>
       </div>
     </div>
 
     <p class="my_contribution_points">My Contribution Points</p>
     
     <div class="point_box">
-        <span class="points_size">1,000</span>
+        <span id="points_js" class="points_size">{{ctrl.data.MyPoint}}</span>
         <span class="cp_size">CP</span>        
     </div>
     
+
+    
     <div class="point_bottom_underbar"></div>
     
-    <div class="date">
-        <p class="date_moji"> 2011-11-08</p>
-        <p class="date_moji"> 2011-11-08</p>
-        <p class="date_moji"> 2011-11-08</p>
-        <p class="date_moji"> 2011-11-08</p>
-        <p class="date_moji"> 2011-11-08</p>
-        <p class="date_moji"> 2011-11-08</p>
-        <p class="date_moji"> 2011-11-08</p>
-        <p class="date_moji"> 2011-11-08</p>
+    <div class="box_left">ポイント増減</div>
+    <div class="box_right">日付</div>
+    
+    
+    <div class="box_list">
+     <ons-list>  
+        <ons-list-item ng-repeat="point in ctrl.points">
+                <div class="center" style="padding: 2px 4px 2px 0; min-height: 5px;">{{point.Point}}</div>
+                <div class="right" style="padding: 2px 4px 2px 0; min-height: 5px;">{{point.Time | date: 'yyyy-MM-dd HH:mm'}}</div>
+        </ons-list-item>
+     </ons-list>
     </div>
     
-    <div class="plumi">
-        <div class="plus">
-            <p class="plus_number"> +100</p>
-            <p class="plus_number"> +100</p>
-            <p class="plus_number"> +100</p>
-            <p class="plus_number"> +100</p>
-            
-        </div>
-        <div class="minus">
-            <p class="minus_number"> -100</p>
-            <p class="minus_number"> -100</p>
-            <p class="minus_number"> -100</p>
-            <p class="minus_number"> -100</p>
-        </div>
-    </di>
+    
+    
 </ons-page>

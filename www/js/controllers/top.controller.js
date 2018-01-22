@@ -16,6 +16,7 @@
         vm.init = init;
         vm.gotoLogin = gotoLogin; 
         vm.gotoMain = gotoMain; 
+        vm.gotoTwitterLogin = gotoTwitterLogin; 
         
         
         /**
@@ -29,6 +30,9 @@
         navi.pushPage('pages/main.html');
         }
 
+        function gotoTwitterLogin() {
+            navi.pushPage('pages/TwitterLogin.html');
+        }
         /** 
          * 初期化
          */
